@@ -35,7 +35,7 @@
     margin-bottom: 8px;
 }
 .footer-column ul li a{
-    color: blue;
+    color: rgb(252, 252, 252);
     text-decoration: none;
 }
 .footer-column ul li a:hover{
@@ -48,7 +48,7 @@
  flex-wrap: wrap;
 }
 .social-icons a {
-    color: white;
+    color: rgb(255, 255, 255);
     margin-right: 15px;
     text-decoration: none;
     font-size: 20px;
@@ -56,4 +56,179 @@
 .payment-icons img {
     height: 30px;
     margin-right: 10px;
+}
+.hero{
+    background-image: url(logo/baniere1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px; /* propriété qui définit l'espace extérieur sous un élément html  (marge externe)*/
+
+}
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.hero button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #6B7D6D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.text-bg {
+    background-color: rgba(128, 128, 128, 0.589);
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+}
+ main{
+    padding-bottom: 60px;
+}
+.fleurs-section{
+    padding: 50px 20px;
+    background-color: #fafafafa;
+    text-align: center;
+}
+.fleurs-section h1{
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: bold; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+}
+.grille-fleurs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+
+}
+.fleur{
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width:250px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.fleur:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.fleur img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.fleur h2{
+    font-size: 20px;
+    margin: 15px 15px 5px;
+    color: #000
+}
+.fleur p{
+    font-size: 16px;
+    margin: 0 15px 10px;
+    color: #666;
+}
+.fleur .prix{
+    margin : 0 15px;
+    font-weight: bold;
+    color: #c2185b;
+    font-size: 1rem;
+}
+.fleur .stock{
+    margin: 5px 15px 15px;
+    font-size: 0.85rem;
+    color: #888;
+    
+}
+.hero-deuil{
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    text-align: center;
+}
+.hero-deuil-content h1{
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+.hero-deuil-content p{
+    font-size: 1.2rem;
+    color: #666666;
+}
+.hero_express{
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #b9ddb0, #fefefe);
+    text-align: center;
+    border-bottom: 2px solid #eee;
+}
+.hero_express-content h1{
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #444444;
+}
+.hero_express-content p{
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.hero_express-content h1{
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #333333;
+}
+.hero_express-content p{
+    font-size: 20px;
+    color: #555;
+}
+.hero_petits_prix{
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f0fdf4, #d7e9d2);
+    text-align: center;
+}
+.hero_petits_prix-content h1{
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #282623;
+}
+.hero_petits_prix-content p{
+    font-size: 1.2rem;
+    color: #35302b
+}
+.tri-prix-boutons{
+    text-align: center;
+    margin: 20px 0;
+}
+.btn-tri{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #d7e9d2;
+    color: #333;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+.btn-tri:hover{
+    background-color: #bcd9b8;
+}
+.btn-tri.active{
+    background-color: #8fbf87;
+    color: white;
 }

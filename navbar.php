@@ -12,7 +12,8 @@
     <div class="bg-light " style ="height: 50px; position: relative;">
         <div class="container h-100">
             <div class="d-flex align-items-center h-100">
-                <div class="flex-fill text-center"><a href="#" class= "text-dark">Livraison express</a></div>
+                <div class="flex-fill text-center"><a href="index.php" class= "text-dark">Accueil</a></div>
+                <div class="flex-fill text-center"><a href="livraison_express.php" class= "text-dark">Livraison express</a></div>
                 <!--Menu déroulant occasions-->
                 <div class="dropdown flex-fill text-center">
                     <a class="text-dark dropdown-toggle text-decoration-none" href="#" role="button"  data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,8 +29,8 @@
                 </div>
             
 
-                <div class="flex-fill text-center"><a href="#" class="text-dark"> Petits prix</a></div>
-                <div class="flex-fill text-center"><a href="#" class="text-dark"> Deuil</a></div>
+                <div class="flex-fill text-center"><a href="petits_prix.php" class="text-dark"> Petits prix</a></div>
+                <div class="flex-fill text-center"><a href="deuil.php" class="text-dark"> Deuil</a></div>
                 <div class="flex-fill text-center"><a href="#" class="text-dark">Bouquets</a></div> 
                 <div class="flex-fill text-center"><a href="#" class="text-dark">Cadeaux</a></div> 
             </div>
