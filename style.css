@@ -337,5 +337,44 @@
     margin-bottom: 25px;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
+.hero_anniversaire{
+    background-image: url('logo/background_anniversaire.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    padding: 100px 20px;
+    color: #5A2A27;
+    text-align: center;
+    position: relative;
+}
+
+.hero_anniversaire-content{
+    max-width: 700px;
+    margin: 0 auto;
+}
+.hero_anniversaire-content h1{
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #12090c
+}
+.hero_anniversaire-content p{
+    font-size: 1.25px;
+    margin-bottom: 30px;
+    color: #5A2A27;6B4C4C
+}
+.hero_anniversaire-content button{
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #C2185B;
+    color: white;
+    border-radius:8px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+.hero_anniversaire-content button:hover{
+    background-color: #A81F4B;
+}
+
 
 

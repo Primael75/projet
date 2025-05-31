@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roses Speciales</title>
+    <title>Bouquets d'anniversaire</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css"/>
 </head>
@@ -11,15 +11,15 @@
     <?php include 'header.php'; ?>
     <?php include 'navbar.php'; ?>
     <main>
-        <?php include 'hero_roses_speciales.php'; ?>
+        <?php include 'hero_anniversaire.php'; ?>
         <?php
          require 'db.php';                /*le require au lieu de include permet de s'assurer que le fichier est bien inclus, sinon le script s'arrête  ce qui est une bonne pratique pour les fichiers essentiels*/
-            $sql = "SELECT * FROM produits WHERE image_url LIKE '%_rs.jpg'AND categorie_id =(3)"; // Requête pour récupérer tous les produits mise dans la variable $sql parce que je peux l'utiliser plusieurs fois et que c'est plus lisible et je peux la modifier facilement si besoin
+            $sql = "SELECT * FROM produits WHERE categorie_id IN (1, 3) ORDER BY nom ASC "; // Requête pour récupérer tous les produits mise dans la variable $sql parce que je peux l'utiliser plusieurs fois et que c'est plus lisible et je peux la modifier facilement si besoin
             $stmt = $pdo->query($sql); // Exécution de la requête et stockage du résultat dans un objet PDOStatement nommé $stmt
             $fleurs = $stmt->fetchAll(PDO::FETCH_ASSOC); // Récupération de tous les produits sous forme de tableau associatif
         ?>
         <section class="fleurs-section">
-            <h1>Nos Roses Spéciales</h1>
+            <h1>Nos Bouquets d'Anniversaires</h1>
 
             <div class="grille-fleurs">
                 <?php foreach ($fleurs as $fleur): ?>

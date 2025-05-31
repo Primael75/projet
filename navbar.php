@@ -20,7 +20,7 @@
                         Occasions
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item " href="#">Anniversaire</a></li>
+                        <li><a class="dropdown-item " href="anniversaire.php">Anniversaire</a></li>
                         <li><a class="dropdown-item " href="#">Mariage</a></li>
                         <li><a class="dropdown-item " href="#">Naissance</a></li>
                         <li><a class="dropdown-item " href="#">Fête des mères</a></li>
