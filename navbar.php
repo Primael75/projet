@@ -31,7 +31,17 @@
 
                 <div class="flex-fill text-center"><a href="petits_prix.php" class="text-dark"> Petits prix</a></div>
                 <div class="flex-fill text-center"><a href="deuil.php" class="text-dark"> Deuil</a></div>
-                <div class="flex-fill text-center"><a href="#" class="text-dark">Bouquets</a></div> 
+                <div class="dropdown flex-fill text-center">
+                    <a class="text-dark dropdown-toggle text-decoration-none" href="#" role="button"  data-bs-toggle="dropdown" aria-expanded="false">
+                       Bouquets
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item " href="rose_classique.php">Roses classiques</a></li>
+                        <li><a class="dropdown-item " href="rose_spéciales.php">Roses spéciales</a></li>
+                        <li><a class="dropdown-item " href="bouquets_automne.php">Automnes</a></li>
+                        <li><a class="dropdown-item " href="deuil.php">Deuil</a></li>
+                    </ul>
+                </div>
                 <div class="flex-fill text-center"><a href="#" class="text-dark">Cadeaux</a></div> 
             </div>
         </div>

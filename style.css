@@ -232,3 +232,110 @@
     background-color: #8fbf87;
     color: white;
 }
+.hero_roses_classiques{
+    background-image: url(logo/background_roses_classiques.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+.hero_roses_classiques::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+     background-color: #D4A373
+    z-index: 0;
+}
+.hero_roses_classiques-content{
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 1;
+}
+.hero_roses_classiques-content h1{
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+.hero_roses_classiques-content p{
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+.hero_roses_speciales{
+    background-image: url(logo/background_roses_speciales.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+.hero_roses_speciales::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+     background-color: #D4A373
+    z-index: 0;
+}
+.hero_roses_speciales-content{
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 1;
+}
+.hero_roses_speciales-content h1{
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+.hero_roses_speciales-content p{
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+.hero_bouquets_automne{
+    background-image: url(logo/background_bouquets_automne.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+.hero_bouquets_automne::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+     background-color: #D4A373
+    z-index: 0;
+}
+.hero_bouquets_automne-content{
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 1;
+}
+.hero_bouquets_automne-content h1{
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+.hero_bouqets_automne-content p{
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+
