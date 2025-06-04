@@ -21,10 +21,10 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item " href="anniversaire.php">Anniversaire</a></li>
-                        <li><a class="dropdown-item " href="#">Mariage</a></li>
-                        <li><a class="dropdown-item " href="#">Naissance</a></li>
-                        <li><a class="dropdown-item " href="#">Fête des mères</a></li>
-                        <li><a class="dropdown-item " href="#">Fête des pères</a></li>
+                        <li><a class="dropdown-item " href="mariage.php">Mariage</a></li>
+                        <li><a class="dropdown-item " href="naissance.php">Naissance</a></li>
+                        <li><a class="dropdown-item " href="fete_des_meres.php">Fête des mères</a></li>
+                        <li><a class="dropdown-item " href="fete_pere.php">Fête des pères</a></li>
                     </ul>
                 </div>
             

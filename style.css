@@ -358,9 +358,9 @@
     color: #12090c
 }
 .hero_anniversaire-content p{
-    font-size: 1.25px;
+    font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #5A2A27;6B4C4C
+    color: #231e1e;6B4C4C
 }
 .hero_anniversaire-content button{
     padding: 15px 30px;
@@ -375,6 +375,168 @@
 .hero_anniversaire-content button:hover{
     background-color: #A81F4B;
 }
+.hero_naissance{
+    background-image: url('logo/background_naissance.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    padding: 100px 20px;
+    color: #aec4ac;
+    text-align: center;
+    position: relative;
+}
 
+.hero_naissance-content{
+    max-width: 700px;
+    margin: 0 auto;
+}
+.hero_naissance-content h1{
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #2a2a15
+}
+.hero_naissance-content p{
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #282719;
+}
+.hero_naissance-content button{
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: #d9e471;
+    color: white;
+    border-radius:8px;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+.hero_naissance-content button:hover{
+    background-color: #a3a81f;
+}
+.hero_mariage{
+    background-image: url('logo/background_mariage.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero_mariage::before{
+    content: '';
+    position: absolute;
+    top: 0; left : 0; right: 0; 
+     background : rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
 
+.hero_mariage-content{
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 2;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
+
+   
+.hero_mariage-content h1{
+    font-size: 2.8em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #000000;
+    text-shadow: #333 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.hero_mariage-content p{
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #121112;
+    text-shadow:  0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.hero_mariage-content button{
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    background-color: #ff9ac1;
+    color: white;
+    border-radius:8px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+.hero_mariage-content button:hover{
+    background-color: #e573a2;
+}
+.hero_mere{
+    background-image: url(logo/background_mere.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+.hero_mere::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+     background-color: #D4A373
+    z-index: 0;
+}
+.hero_mere-content{
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 1;
+}
+.hero_mere-content h1{
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+.hero_mere-content p{
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+.hero_pere{
+    background-image: url(logo/background_fete_pere.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+.hero_pere::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+     background-color: #D4A373
+    z-index : 0;
+}
+.hero_pere-content{
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 1;
+}
+.hero_pere-content h1{
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+.hero_pere-content p{
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
 

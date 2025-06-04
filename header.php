@@ -27,7 +27,7 @@
              <div class="d-flex gap-3">
                 <a href="#" class="text-dark"><i class="fa-solid fa-user"></i></a>
                 <a href="#" class="text-dark"><i class="fa-solid fa-truck"></i></a>
-                <a href="#" class="text-dark position-relative"><i class="fa-solid fa-shopping-cart fs-5"></i>
+                <a href="panier.php" class="text-dark position-relative"><i class="fa-solid fa-shopping-cart fs-5"></i>
                 <span class="position-absolute top-70
                  start-100 translate-middle-x badge rounded-pill bg-danger">2</span>
                 </a>
