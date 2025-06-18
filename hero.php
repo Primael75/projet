@@ -4,7 +4,6 @@
         <div class="text-bg">
          <h1>Exprimez vos emotions avec des fleurs</h1>
          <p>Livraison rapide et bouquets faits main par nos artisants fleuristes.</p>
-         <a href="shop.php" class="btn">Découvrir nos bouquets</a>
         </div>
     </div>
 </section>

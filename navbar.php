@@ -1,14 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maelfleur</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+
+     <!-- Barre de navigation -->
+     <div class="bg-green-sauge py-2 border-bottom " style ="height: 80px; position: relative;">
+        <div class="container h-100 d-flex align-items-center justify-content-between flex-wrap">
+            <!-- Liens à gauche -->
+
+            <div>
+                <a href="#" class="text-dark me-3">Questions fréquentes</a>
+                <a href="#" class="text-dark me-3">Entreprises</a>
+                <a href="#" class="text-dark me-3">Contacts</a> 
+            
+            </div>
+          
+            <!-- Icônes centreées -->
+             <div class="d-flex gap-3">
+                <a href="register.php" class="text-dark"><i class="fa-solid fa-user"></i></a>
+                <a href="#" class="text-dark"><i class="fa-solid fa-truck"></i></a>
+             
+
+                <a  href="panier.php" class="text-dark position-relative">
+                <i class="fa-solid fa-shopping-cart fs-5"></i>
+                <?php 
+                        // Afficher le nombre d'articles dans le panier
+                        if (isset($_SESSION['panier']) && is_array($_SESSION['panier'])) {
+
+                            $nb_articles = 0;
+                            foreach ($_SESSION['panier'] as $article) {
+                                if (isset($article['quantite'])) {
+                                    $nb_articles += $article['quantite'];
+                                }
+                            }
+                            ?>
+
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            <?php echo $nb_articles; ?>
+                                            </span>
+
+                            <?php
+
+                        } 
+                    ?>
+                
+                </a>
+             </div>
+               <!--logo au centre-->
+            <a href="#" class="position-absolute start-50 top-50" style="transform: translate(-55%, -50%); height: 100%;">
+                <img src="logo\logo.jpg" alt="Logo" class="rounded-circle" style="height:80px;">
+            </a>
+        </div>
+    </div> 
+
     <div class="bg-light " style ="height: 50px; position: relative;">
         <div class="container h-100">
             <div class="d-flex align-items-center h-100">
@@ -20,7 +60,7 @@
                         Occasions
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item " href="anniversaire.php">Anniversaire</a></li>
+                        <li><a class="dropdown-item " href="occasions.php?id=anniv">Anniversaire</a></li>
                         <li><a class="dropdown-item " href="mariage.php">Mariage</a></li>
                         <li><a class="dropdown-item " href="naissance.php">Naissance</a></li>
                         <li><a class="dropdown-item " href="fete_des_meres.php">Fête des mères</a></li>

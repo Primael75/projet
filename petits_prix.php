@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petits prix</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
     <?php include 'header.php'; ?>
-    <?php include 'navbar.php'; ?>
+    <title>Petits prix</title>
+</head>
+<?php include 'navbar.php'; ?>
+<body>
     <main>
         <?php include 'hero_petits_prix.php'; ?>
         <?php
@@ -50,13 +46,19 @@
                             <span class="indisponible">Indisponible</span>
                         <?php endif; ?>
                         </div>
+                        <form method ="post" action="ajouter_panier.php"> <!-- La méthode POST est utilisée pour envoyer les données du formulaire de manière sécurisée parceque les données ne s'affichent pas dans l'URL grace a cette methode;; La partie action dit au navigateur que lorsqu'on clique sur le bouton les données seront envoyées a ce fichier PHP qui traitera l'ajout au panier -->
+                            <input type="hidden" name="fleur_id" value="<?php echo $fleur['id']; ?>">
+                            <input type="hidden" name="fleur_image" value="<?php echo htmlspecialchars($fleur['image_url']); ?>"> <!-- On utilise des champs cachés pour envoyer les données du produit au script d'ajout au panier -->
+                            <input type="hidden" name="fleur_nom" value="<?php echo htmlspecialchars($fleur['nom']); ?>">
+                            <input type="hidden" name="fleur_prix" value="<?php echo $fleur['prix']; ?>">
+                            <button type="submit" class="btn-ajouter-panier">Ajouter au panier</button>
+                        </form>
                     </div>
                  <?php endforeach; ?>
             </div>
         </section>
 
     </main>
-    <?php include 'footer.php'; ?>
-    
 </body>
+<?php include 'footer.php'; ?>
 </html>

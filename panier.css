@@ -1,75 +1,96 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 20px;
 }
 
-table {
+main {
+    max-width: 900px;
+    margin: auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #2d572c;
+    text-align: center;
+}
+
+.table-panier {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-th, td {
+.table-panier th,
+.table-panier td {
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
     vertical-align: middle;
 }
 
-th {
-    background-color: #4CAF50;
+.table-panier thead tr {
+    background-color: #81d07f;
     color: white;
 }
 
-.img-produit {
-    max-width: 80px;
-    max-height: 80px;
-    object-fit: contain;
-}
-
-.form-qty {
-    display: inline-block;
-    margin: 0 5px;
-}
-
-.btn-qty {
-    padding: 5px 12px;
-    font-weight: bold;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.btn-qty:disabled {
-    background-color: #aaa;
-    cursor: not-allowed;
-}
-
-.btn-retirer {
-    color: white;
-    background-color: #dc3545;
-    padding: 6px 12px;
-    text-decoration: none;
-    border-radius: 3px;
-    display: inline-block;
-}
-
-.btn-retirer:hover {
-    background-color: #c82333;
-}
-
-.btn-retour {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
+.table-panier img {
     border-radius: 4px;
 }
 
-.btn-retour:hover {
-    background-color: #0069d9;
+button {
+    background-color: #c0392b;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #e74c3c;
+}
+
+a {
+    text-decoration: none;
+    color: #2980b9;
+    margin: 0 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.panier-vide {
+    text-align: center;
+    font-size: 1.2em;
+    color: #888;
+}
+.retour-accueil {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #2d572c;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.retour-accueil:hover {
+    color: #1e3d1c;
+    text-decoration: underline;
+}
+.message-erreur {
+    background-color: #ffe6e6;
+    color: #c0392b;
+    border: 1px solid #e74c3c;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
 }

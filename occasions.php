@@ -1,29 +1,29 @@
-<?php
-session_start(); // Démarre une session pour pouvoir utiliser les variables de session
-         require 'db.php';                /*le require au lieu de include permet de s'assurer que le fichier est bien inclus, sinon le script s'arrête  ce qui est une bonne pratique pour les fichiers essentiels*/
-            $sql = "SELECT * FROM produits WHERE categorie_id NOT IN (4)"; // Requête pour récupérer tous les produits mise dans la variable $sql parce que je peux l'utiliser plusieurs fois et que c'est plus lisible et je peux la modifier facilement si besoin
-            $stmt = $pdo->query($sql); // Exécution de la requête et stockage du résultat dans un objet PDOStatement nommé $stmt
-            $fleurs = $stmt->fetchAll(PDO::FETCH_ASSOC); // Récupération de tous les produits sous forme de tableau associatif
-        ?>
+<?php 
+//get 
+
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include 'header.php'; ?>
-    <title>Accuei|Maelfleur</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"/>
+    <?php include 'header.php'; ?>
+    <title>Bouquets de mariage</title>
 </head>
-
 <?php include 'navbar.php'; ?>
 <body>
-    
- 
     <main>
-        <?php include 'hero.php'; ?>
-       
+        <?php include 'hero_mariage.php'; ?>
+        <?php
+         require 'db.php';                /*le require au lieu de include permet de s'assurer que le fichier est bien inclus, sinon le script s'arrête  ce qui est une bonne pratique pour les fichiers essentiels*/
+            $sql = "SELECT * FROM produits WHERE categorie_id IN ( 3) ORDER BY nom ASC "; // Requête pour récupérer tous les produits mise dans la variable $sql parce que je peux l'utiliser plusieurs fois et que c'est plus lisible et je peux la modifier facilement si besoin
+            $stmt = $pdo->query($sql); // Exécution de la requête et stockage du résultat dans un objet PDOStatement nommé $stmt
+            $fleurs = $stmt->fetchAll(PDO::FETCH_ASSOC); // Récupération de tous les produits sous forme de tableau associatif
+        ?>
         <section class="fleurs-section">
-            <h1>Nos bouquets</h1>
+            <h1>Nos Bouquets de mariage</h1>
 
             <div class="grille-fleurs">
                 <?php foreach ($fleurs as $fleur): ?>
@@ -46,7 +46,6 @@ session_start(); // Démarre une session pour pouvoir utiliser les variables de 
                             <input type="hidden" name="fleur_image" value="<?php echo htmlspecialchars($fleur['image_url']); ?>"> <!-- On utilise des champs cachés pour envoyer les données du produit au script d'ajout au panier -->
                             <input type="hidden" name="fleur_nom" value="<?php echo htmlspecialchars($fleur['nom']); ?>">
                             <input type="hidden" name="fleur_prix" value="<?php echo $fleur['prix']; ?>">
-                            <input type="hidden" name="fleur_stock" value="<?php echo $fleur['stock']; ?>"> <!-- On utilise des champs cachés pour envoyer les données du produit au script d'ajout au panier -->
                             <button type="submit" class="btn-ajouter-panier">Ajouter au panier</button>
                         </form>
                     </div>
@@ -55,9 +54,8 @@ session_start(); // Démarre une session pour pouvoir utiliser les variables de 
         </section>
 
     </main>
-    <?php include 'footer.php'; ?>
+  
     
 </body>
-
-
+<?php include 'footer.php'; ?>
 </html>

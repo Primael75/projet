@@ -1,70 +1,106 @@
 <?php
 session_start();
 
-$total = 0;
-$produits = $_SESSION['panier'] ?? [];
+// === Gestion des actions (AJOUT / RETRAIT / SUPPRESSION / VIDAGE) === //
+if (isset($_GET['id']) && isset($_GET['action'])) {
+    $id = $_GET['id'];
+    $action = $_GET['action'];
+
+    if (isset($_SESSION['panier'][$id])) {
+        if ($action === 'increment') {
+            if ($_SESSION['panier'][$id]['quantite'] < $_SESSION['panier'][$id]['stock']) {
+                $_SESSION['panier'][$id]['quantite']++;
+            } else {
+                $_SESSION['message_stock'] = "Quantité maximale atteinte pour ce produit.";
+            }
+        } elseif ($action === 'decrement') {
+            if ($_SESSION['panier'][$id]['quantite'] > 1) {
+                $_SESSION['panier'][$id]['quantite']--;
+            } else {
+                unset($_SESSION['panier'][$id]);
+            }
+        } elseif ($action === 'supprimer') {
+            unset($_SESSION['panier'][$id]);
+        }
+    }
+
+    header('Location: panier.php');
+    exit();
+}
+
+if (isset($_POST['vider_panier'])) {
+    unset($_SESSION['panier']);
+    header('Location: panier.php');
+    exit();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <title>Mon panier</title>
-    <link rel="stylesheet" href="panier.css" />
+    <meta charset="UTF-8">
+    <title>Votre panier | Maelfleur</title>
+    <link rel="stylesheet" href="panier.css">
 </head>
 <body>
 
-<h1>Mon panier</h1>
+<a href="index.php" class="retour-accueil">← Retour à l'accueil</a>
 
-<?php if (empty($produits)): ?>
-    <p>Votre panier est vide.</p>
-<?php else: ?>
+<main>
+    <h1>Votre panier</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Produit</th>
-            <th>Prix unitaire</th>
-            <th>Quantité</th>
-            <th>Total</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($produits as $id => $prod): 
-            $totalProduit = $prod['prix'] * $prod['quantite'];
-            $total += $totalProduit;
-        ?>
-            <tr>
-                <td><?= htmlspecialchars($prod['nom']) ?></td>
-                <td><?= number_format($prod['prix'], 2, ',', ' ') ?> €</td>
-                <td>
-                    <form method="post" action="modifier_quantite.php" style="display:inline;">
-                        <input type="hidden" name="id" value="<?= $id ?>" />
-                        <button type="submit" name="action" value="moins" <?= ($prod['quantite'] <= 1) ? 'disabled' : '' ?>>-</button>
-                    </form>
-                    <?= $prod['quantite'] ?>
-                    <form method="post" action="modifier_quantite.php" style="display:inline;">
-                        <input type="hidden" name="id" value="<?= $id ?>" />
-                        <button type="submit" name="action" value="plus">+</button>
-                    </form>
-                </td>
-                <td><?= number_format($totalProduit, 2, ',', ' ') ?> €</td>
-                <td>
-                    <form method="post" action="retirer_produit.php" onsubmit="return confirm('Supprimer ce produit ?');">
-                        <input type="hidden" name="id" value="<?= $id ?>" />
-                        <button type="submit">Retirer</button>
-                    </form>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+    <?php if (isset($_SESSION['message_stock'])): ?>
+        <div class="message-erreur"><?= htmlspecialchars($_SESSION['message_stock']) ?></div>
+        <?php unset($_SESSION['message_stock']); ?>
+    <?php endif; ?>
 
-<h3>Total général : <?= number_format($total, 2, ',', ' ') ?> €</h3>
+    <?php if (!empty($_SESSION['panier'])): ?>
+        <table class="table-panier">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Nom</th>
+                    <th>Prix unitaire</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $total_general = 0;
+                foreach ($_SESSION['panier'] as $id => $produit):
+                    $total = $produit['prix'] * $produit['quantite'];
+                    $total_general += $total;
+                ?>
+                    <tr>
+                        <td><img src="<?= htmlspecialchars($produit['image_url']) ?>" width="60" height="60" alt="Image du produit"></td>
+                        <td><?= htmlspecialchars($produit['nom']) ?></td>
+                        <td><?= number_format($produit['prix'], 2) ?> €</td>
+                        <td>
+                            <a href="panier.php?id=<?= $id ?>&action=decrement">−</a>
+                            <?= $produit['quantite'] ?>
+                            <a href="panier.php?id=<?= $id ?>&action=increment">+</a>
+                        </td>
+                        <td><?= number_format($total, 2) ?> €</td>
+                        <td>
+                            <a href="panier.php?id=<?= $id ?>&action=supprimer" onclick="return confirm('Supprimer ce produit ?')">Supprimer</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
 
-<a href="index.php">← Retour à la boutique</a>
+        <h2>Total général : <?= number_format($total_general, 2) ?> €</h2>
 
-<?php endif; ?>
+        <form method="post" action="panier.php">
+            <button type="submit" name="vider_panier" onclick="return confirm('Êtes-vous sûr de vouloir vider votre panier ?')">🗑 Vider le panier</button>
+        </form>
+
+    <?php else: ?>
+        <p class="panier-vide">🛒 Votre panier est vide.</p>
+    <?php endif; ?>
+</main>
 
 </body>
 </html>

@@ -1,25 +1,26 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bouquets pour Papa</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-    <?php include 'header.php'; ?>
-    <?php include 'navbar.php'; ?>
-    <main>
-        <?php include 'hero_pere.php'; ?>
-        <?php
+<?php
          require 'db.php';                /*le require au lieu de include permet de s'assurer que le fichier est bien inclus, sinon le script s'arrête  ce qui est une bonne pratique pour les fichiers essentiels*/
             $sql = "SELECT * FROM produits WHERE categorie_id IN (2, 1) ORDER BY prix desc "; // Requête pour récupérer tous les produits mise dans la variable $sql parce que je peux l'utiliser plusieurs fois et que c'est plus lisible et je peux la modifier facilement si besoin
             $stmt = $pdo->query($sql); // Exécution de la requête et stockage du résultat dans un objet PDOStatement nommé $stmt
             $fleurs = $stmt->fetchAll(PDO::FETCH_ASSOC); // Récupération de tous les produits sous forme de tableau associatif
         ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bouquets pour Papa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+<?php include 'header.php'; ?>
+<?php include 'navbar.php'; ?>
+    <main>
+        <?php include 'hero_pere.php'; ?>
+   
         <section class="fleurs-section">
             <h1>Bonne fête papa</h1>
 
@@ -39,6 +40,13 @@
                             <span class="indisponible">Indisponible</span>
                         <?php endif; ?>
                         </div>
+                        <form method ="post" action="ajouter_panier.php"> <!-- La méthode POST est utilisée pour envoyer les données du formulaire de manière sécurisée parceque les données ne s'affichent pas dans l'URL grace a cette methode;; La partie action dit au navigateur que lorsqu'on clique sur le bouton les données seront envoyées a ce fichier PHP qui traitera l'ajout au panier -->
+                            <input type="hidden" name="fleur_id" value="<?php echo $fleur['id']; ?>">
+                            <input type="hidden" name="fleur_image" value="<?php echo htmlspecialchars($fleur['image_url']); ?>"> <!-- On utilise des champs cachés pour envoyer les données du produit au script d'ajout au panier -->
+                            <input type="hidden" name="fleur_nom" value="<?php echo htmlspecialchars($fleur['nom']); ?>">
+                            <input type="hidden" name="fleur_prix" value="<?php echo $fleur['prix']; ?>">
+                            <button type="submit" class="btn-ajouter-panier">Ajouter au panier</button>
+                        </form>
                     </div>
                  <?php endforeach; ?>
             </div>
@@ -48,4 +56,5 @@
     <?php include 'footer.php'; ?>
     
 </body>
+
 </html>
