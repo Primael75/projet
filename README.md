@@ -15,7 +15,7 @@ Ce projet est un site de vente de bouquets en ligne, développé dans le cadre d
 
 ---
 
-## 📂 Structure des fichiers
+##  Structure des fichiers
 
 | Fichier | Description |
 |--------|-------------|
@@ -35,8 +35,8 @@ Ce projet est un site de vente de bouquets en ligne, développé dans le cadre d
 
 - *Fatoumata Diarra*
 - *Aissata Cisse*
-- *Primael*
-- *Junior Foze*
+- *Primael Azinnogbe*
+- *Junior Kamgang Foze*
 
 ---
 
@@ -75,7 +75,7 @@ Voici le lien vers la maquette de l’interface réalisée sur Figma :
 
 ---
 
-## 🛠 Technologies utilisées
+##  Technologies utilisées
 
 - PHP
 - HTML / CSS
@@ -86,7 +86,7 @@ Voici le lien vers la maquette de l’interface réalisée sur Figma :
 
 ---
 
-## 🔗 Lien GitHub
+##  Lien GitHub
 
 [https://github.com/Primael75/projet](https://github.com/Primael75/projet)                                                                                                                                                                                                                                                                                                                                                                                       
                   
