@@ -48,11 +48,13 @@ Ce projet est un site de vente de bouquets en ligne, développé dans le cadre d
 - Développement de :
   - login.php
   - login.css
+  - Réalisation du figma
 
 ###  Aissata Cisse
 - Intégration de pages front-end
 - Création de certaines pages de catégories (ex: mariage.php, naissance.php)
 - Aide à la mise en page CSS
+- Réalisation du figma
 
 ###  Primael
 - Mise en place du dépôt GitHub
@@ -64,6 +66,7 @@ Ce projet est un site de vente de bouquets en ligne, développé dans le cadre d
 ###  Junior Foze
 - Intégration des fichiers header.php, footer.php, navbar.php
 - Création de la page livraison_express.php
+- Réalisation du figma
 
 ---
 
@@ -88,5 +91,9 @@ Voici le lien vers la maquette de l’interface réalisée sur Figma :
 
 ##  Lien GitHub
 
-[https://github.com/Primael75/projet](https://github.com/Primael75/projet)                                                                                                                                                                                                                                                                                                                                                                                       
+[https://github.com/Primael75/projet](https://github.com/Primael75/projet) 
+
+## Power Point
+https://1drv.ms/p/c/bb910fa9009619a8/EZG2OLzusjVCgLHYRxHyTVUBTaexoNMYaiyoStatgYFnuw?e=0coGkN
+
                   
